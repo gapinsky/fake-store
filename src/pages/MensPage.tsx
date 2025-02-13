@@ -1,8 +1,7 @@
+import ProductsGrid from "../components/ProductsGrid";
 
 const MensPage = () => {
-  return (
-    <div>MensPage</div>
-  )
-}
+  return <ProductsGrid category={"/category/men's clothing"} />;
+};
 
-export default MensPage
+export default MensPage;

@@ -1,5 +1,7 @@
+import ProductsGrid from "../components/ProductsGrid";
+
 const WomensPage = () => {
-  return <div>WomensPage</div>;
+  return <ProductsGrid category={"/category/women's clothing"} />;
 };
 
 export default WomensPage;
