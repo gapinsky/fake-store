@@ -17,7 +17,7 @@ interface Props {
   category: string;
 }
 
-interface FetchProductsResult {
+export interface FetchProductsResult {
   data: Product[];
   isLoading: boolean;
   error: any;

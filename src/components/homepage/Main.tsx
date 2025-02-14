@@ -1,5 +1,5 @@
 import Advertise from "./Advertise";
-import HomeGrid from "./HomeGrid";
+import MainCarousel from "./MainCarousel";
 import NewCollection from "./NewCollection";
 
 const Main = () => {
@@ -7,7 +7,7 @@ const Main = () => {
     <div className=" h-full flex flex-col justify-end">
       <NewCollection />
       <Advertise />
-      <HomeGrid />
+      <MainCarousel />
     </div>
   );
 };
