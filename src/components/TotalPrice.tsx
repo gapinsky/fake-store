@@ -8,16 +8,22 @@ interface Props {
     image: string;
     category: string;
   }[];
+  shipping: string;
 }
 
-const TotalPrice = ({ cartWithTotal }: Props) => {
+const TotalPrice = ({ cartWithTotal, shipping }: Props) => {
   const productsTotalPrice = cartWithTotal
     .reduce((acc, cur) => acc + cur.total, 0)
     .toFixed(2);
-  const shipping = 14.99;
-  const totalWithShipping = (parseFloat(productsTotalPrice) + shipping).toFixed(
-    2
-  );
+  // const shipping = 14.99;
+  const totalWithShipping =
+    shipping === "free"
+      ? parseFloat(productsTotalPrice).toFixed(2)
+      : (parseFloat(productsTotalPrice) + parseFloat(shipping)).toFixed(2);
+
+  // const totalWithShipping = (
+  //   parseFloat(productsTotalPrice) + parseFloat(shipping)
+  // ).toFixed(2);
 
   return (
     <div className="">
@@ -26,7 +32,8 @@ const TotalPrice = ({ cartWithTotal }: Props) => {
         <span>{productsTotalPrice ? productsTotalPrice : "0.00"}$</span>
       </p>
       <p className="inline-flex justify-between w-full mb-2">
-        Shipping: <span>{shipping}$</span>
+        Shipping:{" "}
+        <span>{`${shipping === "free" ? "Free" : shipping + "$"}`}</span>
       </p>
       <p className="inline-flex justify-between w-full mb-5">
         Total:{" "}
