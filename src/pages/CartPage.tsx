@@ -7,7 +7,7 @@ import { FaCcPaypal, FaCcAmex, FaMoneyBillTransfer } from "react-icons/fa6";
 import { useState } from "react";
 import TotalPrice from "../components/TotalPrice";
 const CartPage = () => {
-  const { cart, setCart } = useCart();
+  const { cart } = useCart();
   const [isDiscoutOpen, setIsDiscountOpen] = useState(false);
 
   const cartWithTotal = cart.map((item) => ({
@@ -34,8 +34,9 @@ const CartPage = () => {
         <div className=" w-[40%] flex flex-col  text-2xl px-5 py-2 ">
           <TotalPrice cartWithTotal={cartWithTotal} />
           <div className="text-xl my-5">
+            <p className="text-sm ">(for testing purpose enter "free")</p>
             <p
-              className=" py-1 w-full justify-between inline-flex items-end"
+              className=" py-1 w-full justify-between inline-flex items-end hover:cursor-pointer"
               onClick={handleAccordion}
             >
               Got a discount code?{" "}
