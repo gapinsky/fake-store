@@ -26,3 +26,11 @@
 .card-btn:hover .btn-icon-animate {
   animation: shake 0.3s linear;
 }
+
+.delete-btn:hover .btn-icon-animate {
+  animation: shake 0.3s linear;
+}
+
+li.active {
+  background: red;
+}

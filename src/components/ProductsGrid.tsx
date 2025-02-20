@@ -29,7 +29,7 @@ const ProductsGrid = ({ category }: Props) => {
     isLoading,
     error,
   } = useFetchProducts(category) as FetchProductsResult;
-
+  
   const [sortedProducts, setSortedProducts] = useState<Product[]>([]);
 
   useEffect(() => {
@@ -59,9 +59,11 @@ const ProductsGrid = ({ category }: Props) => {
         />
         {productsPage.map((product: Product) => (
           <ProductCard
+            category={category}
             title={product.title}
             price={product.price}
             image={product.image}
+            id={product.id}
             key={product.id}
           />
         ))}
@@ -74,5 +76,4 @@ const ProductsGrid = ({ category }: Props) => {
     </div>
   );
 };
-
 export default ProductsGrid;

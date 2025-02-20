@@ -56,6 +56,7 @@ const MainCarousel = () => {
                 title={product.title}
                 price={product.price}
                 key={index}
+                id={product.id}
               />
             ))}
             <button

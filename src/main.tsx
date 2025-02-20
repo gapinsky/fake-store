@@ -11,6 +11,7 @@ import Electronics from "./pages/Electronics.tsx";
 import Main from "./components/homepage/Main.tsx";
 import CartPage from "./pages/CartPage.tsx";
 import All from "./pages/All.tsx";
+import ProductPage from "./pages/ProductPage.tsx";
 
 const router = createBrowserRouter([
   {
@@ -23,25 +24,34 @@ const router = createBrowserRouter([
         element: <Main />,
       },
       {
+        path: "/:productId",
+        element: <ProductPage />,
+      },
+      {
         path: "/all_products",
         element: <All />,
       },
+      { path: "/all_products/:productId", element: <ProductPage /> },
       {
         path: "/mens_clothing",
         element: <MensPage />,
       },
+      { path: "/mens_clothing/:productId", element: <ProductPage /> },
       {
         path: "/womens_clothing",
         element: <WomensPage />,
       },
+      { path: "/womens_clothing/:productId", element: <ProductPage /> },
       {
         path: "/jewelery",
         element: <JeweleryPage />,
       },
+      { path: "/jewelery/:productId", element: <ProductPage /> },
       {
         path: "/electronics",
         element: <Electronics />,
       },
+      { path: "/electronics/:productId", element: <ProductPage /> },
       {
         path: "/cart",
         element: <CartPage />,

@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 type Props = {
   children: React.ReactNode;
@@ -12,11 +12,12 @@ const CategoryItem = ({ children }: Props) => {
     .replace("'", "");
 
   return (
-    <Link to={`/${url}`}>
-      <li className="mb-2 py-1 px-2 rounded-sm border-2 border-transparent hover:border-solid-2 hover:border-2 hover:border-black hover:cursor-pointer">
-        {children}
-      </li>
-    </Link>
+    <NavLink
+      to={`/${url}`}
+      className={({ isActive }) => (isActive ? " text-5xl" : "")}
+    >
+      <li className="mb-2 py-1 px-2 hover:cursor-pointer ">{children}</li>
+    </NavLink>
   );
 };
 
