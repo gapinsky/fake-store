@@ -5,7 +5,7 @@ import NotFound from "./NotFound";
 import { FaBasketShopping } from "react-icons/fa6";
 import { CartProduct, useCart } from "../contexts/context";
 interface Product {
-  quantity: number; //dodane
+  quantity: number; 
   image: string;
   id: number;
   description: string;
@@ -27,7 +27,7 @@ const ProductPage = () => {
   const id = params.productId ? parseInt(params.productId) : params.productId;
 
   const {
-    data, //usuniete : products
+    data, 
     isLoading,
     error,
   } = useFetchProducts("") as FetchProductsResult;
@@ -61,8 +61,9 @@ const ProductPage = () => {
       ]);
     }
   };
-  // console.log(cartItemObject);
-  // console.log(cart);
+
+  
+ 
 
   if (isLoading) return <Loading />;
   if (error) return <NotFound />;

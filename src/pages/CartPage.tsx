@@ -8,7 +8,7 @@ import Discount from "../components/Discount";
 import { useState } from "react";
 const CartPage = () => {
   const { cart } = useCart();
-
+ 
   const cartWithTotal = cart.map((item) => ({
     ...item,
     total: item.quantity * item.price,
@@ -29,7 +29,7 @@ const CartPage = () => {
         </ul>
         <div className=" w-[40%] flex flex-col  text-2xl px-5 py-2 ">
           <TotalPrice cartWithTotal={cartWithTotal} shipping={shipping} />
-          <Discount applyDiscount={setShipping}/>
+          <Discount applyDiscount={setShipping} />
           <div className="">
             <p className="text-xl">Payment methods:</p>
             <div className="flex gap-4 text-4xl">

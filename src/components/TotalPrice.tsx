@@ -1,3 +1,6 @@
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 interface Props {
   cartWithTotal: {
     total: number;
@@ -15,15 +18,22 @@ const TotalPrice = ({ cartWithTotal, shipping }: Props) => {
   const productsTotalPrice = cartWithTotal
     .reduce((acc, cur) => acc + cur.total, 0)
     .toFixed(2);
-  // const shipping = 14.99;
   const totalWithShipping =
     shipping === "free"
       ? parseFloat(productsTotalPrice).toFixed(2)
       : (parseFloat(productsTotalPrice) + parseFloat(shipping)).toFixed(2);
 
-  // const totalWithShipping = (
-  //   parseFloat(productsTotalPrice) + parseFloat(shipping)
-  // ).toFixed(2);
+  
+  const navigateCheckout = useNavigate();
+  const [isCheckedOut, setIsCheckedOut] = useState(false);
+  const handleCheckout = () => {
+    if (parseFloat(productsTotalPrice) === 0) {
+      setIsCheckedOut(true);
+      return;
+    }
+    setIsCheckedOut(false);
+    navigateCheckout("/cart/checkout");
+  };
 
   return (
     <div className="">
@@ -41,7 +51,16 @@ const TotalPrice = ({ cartWithTotal, shipping }: Props) => {
           {productsTotalPrice === "0.00" ? "0.00" : totalWithShipping}$
         </span>
       </p>
-      <button className="bg-blue-500 w-full py-1  text-white hover:cursor-pointer hover:bg-blue-600">
+      {isCheckedOut && (
+        <p className="text-sm text-red-500">
+          You need to add something to the cart first.
+        </p>
+      )}
+      <button
+        // to="/cart/checkout"
+        onClick={handleCheckout}
+        className="bg-blue-500 w-full block text-center py-1  text-white hover:cursor-pointer hover:bg-blue-600 "
+      >
         Checkout
       </button>
     </div>

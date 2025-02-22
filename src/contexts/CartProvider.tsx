@@ -1,7 +1,6 @@
 import { ReactNode, useState } from "react";
 import { CartContext, CartProduct } from "./context";
 
-
 interface CartProviderProps {
   children: ReactNode;
 }
@@ -16,3 +15,5 @@ const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
 };
 
 export default CartProvider;
+
+

@@ -12,6 +12,7 @@ import Main from "./components/homepage/Main.tsx";
 import CartPage from "./pages/CartPage.tsx";
 import All from "./pages/All.tsx";
 import ProductPage from "./pages/ProductPage.tsx";
+import CheckoutPage from "./pages/CheckoutPage.tsx";
 
 const router = createBrowserRouter([
   {
@@ -56,6 +57,7 @@ const router = createBrowserRouter([
         path: "/cart",
         element: <CartPage />,
       },
+      { path: "/cart/checkout", element: <CheckoutPage /> },
     ],
   },
 ]);
