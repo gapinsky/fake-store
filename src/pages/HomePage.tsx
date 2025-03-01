@@ -14,7 +14,7 @@ function HomePage() {
         <div className="relative flex">
           <Aside />
           <Cart />
-          <div className="w-5/6">
+          <div className="w-full">
             <Outlet />
           </div>
         </div>

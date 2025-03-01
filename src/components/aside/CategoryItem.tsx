@@ -14,7 +14,7 @@ const CategoryItem = ({ children }: Props) => {
   return (
     <NavLink
       to={`/${url}`}
-      className={({ isActive }) => (isActive ? " text-5xl" : "")}
+      className={({ isActive }) => (isActive ? " font-bold" : "")}
     >
       <li className="mb-2 py-1 px-2 hover:cursor-pointer ">{children}</li>
     </NavLink>

@@ -29,7 +29,7 @@ const ProductsGrid = ({ category }: Props) => {
     isLoading,
     error,
   } = useFetchProducts(category) as FetchProductsResult;
-  
+
   const [sortedProducts, setSortedProducts] = useState<Product[]>([]);
 
   useEffect(() => {
@@ -52,7 +52,7 @@ const ProductsGrid = ({ category }: Props) => {
 
   return (
     <div className="flex flex-col justify-between min-h-screen max-h-screen w-full overflow-hidden">
-      <div className="grid grid-cols-4 grid-flow-row justify-items-center  overflow-hidden">
+      <div className="grid grid-cols-1 grid-flow-row justify-items-center  overflow-hidden xl:grid-cols-4">
         <Select
           unsortedProducts={unsortedProducts}
           setSortedProducts={setSortedProducts}
