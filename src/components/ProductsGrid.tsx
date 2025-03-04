@@ -52,7 +52,7 @@ const ProductsGrid = ({ category }: Props) => {
 
   return (
     <div className="flex flex-col justify-between min-h-screen max-h-screen w-full overflow-hidden">
-      <div className="grid grid-cols-1 grid-flow-row justify-items-center  overflow-hidden xl:grid-cols-4">
+      <div className="grid  grid-flow-row justify-items-center  overflow-y-scroll grid-cols-1  xl:grid-cols-4 xl:overflow-hidden">
         <Select
           unsortedProducts={unsortedProducts}
           setSortedProducts={setSortedProducts}

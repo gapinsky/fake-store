@@ -24,7 +24,7 @@ const Pagination = ({ currentPage, setCurrentPage, pages }: Props) => {
   };
 
   return (
-    <div className="flex items-center mx-auto mb-5 text-xl">
+    <div className="flex items-center mx-auto xl:mb-5 text-lg z-5">
       <button
         className="mx-1  px-1 hover:cursor-pointer"
         onClick={handlePreviousPage}

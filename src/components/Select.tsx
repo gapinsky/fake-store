@@ -40,7 +40,7 @@ const Select = ({ unsortedProducts, setSortedProducts }: Props) => {
   };
 
   return (
-    <p className="col-span-4 place-self-start ml-12 mt-5">
+    <p className="col-span-1 place-self-start ml-12 mt-5 xl:col-span-4">
       <select
         className="p-1 border-solid-black border-2 rounded-lg font-semibold hover:cursor-pointer"
         onChange={(e) => handleSort(e.target.value)}

@@ -10,7 +10,7 @@ const Cart = () => {
   return (
     <Link
       to="/cart"
-      className="z-10 fixed right-8 top-8 p-5  rounded-full hover:cursor-pointer hover:scale-110 "
+      className=" fixed right-3 top-1 p-5  rounded-full hover:cursor-pointer hover:scale-110 xl:top-8 xl:right-8 z-10"
     >
       <GrCart className="text-4xl" />
       {cart.length !== 0 && (

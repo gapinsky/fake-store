@@ -5,7 +5,7 @@ import NotFound from "./NotFound";
 import { FaBasketShopping } from "react-icons/fa6";
 import { CartProduct, useCart } from "../contexts/context";
 interface Product {
-  quantity: number; 
+  quantity: number;
   image: string;
   id: number;
   description: string;
@@ -26,11 +26,9 @@ const ProductPage = () => {
   const params = useParams();
   const id = params.productId ? parseInt(params.productId) : params.productId;
 
-  const {
-    data, 
-    isLoading,
-    error,
-  } = useFetchProducts("") as FetchProductsResult;
+  const { data, isLoading, error } = useFetchProducts(
+    ""
+  ) as FetchProductsResult;
 
   const products = data?.map((item) => ({ ...item, quantity: 1 }));
   const productPage = products?.find((product) => product.id === id);
@@ -62,37 +60,36 @@ const ProductPage = () => {
     }
   };
 
-  
- 
-
   if (isLoading) return <Loading />;
   if (error) return <NotFound />;
 
   return (
-    <div className=" h-full flex flex-col justify-center items-center">
-      <div className="relative flex p-5 justify-center max-w-[80%] ">
+    <div className=" h-full flex flex-col justify-center items-center  xl:justify-center">
+      <div className="relative flex flex-col items-center  justify-center max-w-[80%] max-h-[90%] xl:items-stretch xl:flex-row  xl:p-5">
         <button
           onClick={() => navigate(-1)}
-          className="font-bold px-8 py-1 text-2xl absolute left-0 -top-10 hover:cursor-pointer hover:bg-slate-100 rounded-lg "
+          className="font-bold px-4 py-1 text-xl absolute left-0 bg-neutral-200 -top-10 hover:cursor-pointer hover:bg-neutral-300 rounded-lg xl:text-2xl xl:px-8"
         >
           Back
         </button>
         <img
           src={productPage?.image}
           alt={productPage?.title}
-          className="w-[500px] object-center aspect-square mr-5"
+          className="max-w-[200px] xl:max-w-[500px] object-center aspect-square mr-5"
         />
-        <div className=" p-5 flex flex-col justify-between">
-          <div className=" h-[80%] flex flex-col justify-evenly">
-            <p className="text-3xl font-semibold">{productPage?.title}</p>
+        <div className=" p-5 flex flex-col justify-between xl:gap-0 ">
+          <div className=" flex flex-col justify-evenly  xl:gap-0  xl:h-full">
+            <p className="text-xl xl:text-3xl font-semibold">
+              {productPage?.title}
+            </p>
             <p className="text-xl">
               <span className="font-semibold">Category: </span>
               {productPage &&
                 productPage.category.charAt(0).toUpperCase() +
                   productPage.category.slice(1)}
             </p>
-            <p className="text-xl max-w-[500px]">
-              <span className="font-semibold">Description: </span>
+            <p className="text-xl   max-h-[200px] overflow-y-scroll xl:max-h-none xl:overflow-hidden">
+              <span className="font-semibold ">Description: </span>
               {productPage?.description}
             </p>
             <span className="inline-flex text-xl ">
@@ -103,7 +100,7 @@ const ProductPage = () => {
               <p>of {productPage?.rating.count} reviews</p>
             </span>
           </div>
-          <span className="inline-flex items-center justify-between w-full place-self-end text-2xl">
+          <span className="inline-flex items-center justify-between w-full place-self-end text-xl xl:text-2xl">
             <p className="mr-5">Price: {productPage?.price}$</p>
             <button
               onClick={() => addToCart(cartProduct)}

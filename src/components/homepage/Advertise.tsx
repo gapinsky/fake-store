@@ -9,8 +9,9 @@ const Advertise = () => {
         <p className="text-[115px]  h-fit">70%</p>
       </div>
       <p className="text-center bg-blue-300 text-red-700 font-bold">
-        When building this project I was mainly focused on things around react
-        so unfortunately it is not responsive
+        When building this project, I mainly focused on things related to react,
+        routing, state management, etc. The look of the app was not my main
+        focus just the functionality.
       </p>
     </>
   );

@@ -67,6 +67,12 @@ const MainCarousel = () => {
             </button>
           </div>
           <p>
+            <button
+              onClick={() => changePage("backwards")}
+              className="xl:hidden"
+            >
+              <IoIosArrowBack />
+            </button>
             {slidesDots.map((dot, index) => (
               <button
                 key={index}
@@ -76,6 +82,12 @@ const MainCarousel = () => {
                 {page === dot ? <GoDotFill /> : <GoDot />}
               </button>
             ))}
+            <button
+              onClick={() => changePage("forwards")}
+              className="xl:hidden"
+            >
+              <IoIosArrowForward />
+            </button>
           </p>
         </div>
       )}

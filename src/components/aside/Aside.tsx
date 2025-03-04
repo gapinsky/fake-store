@@ -1,10 +1,18 @@
 import { Link } from "react-router-dom";
 import AsideSocials from "./AsideSocials";
 import CategoryItem from "./CategoryItem";
-const Aside = () => {
+type Props = {
+  isVisible: boolean;
+  setIsVisible: React.Dispatch<React.SetStateAction<boolean>>;
+};
+const Aside = ({ isVisible, setIsVisible }: Props) => {
   return (
-    <aside className=" h-screen  flex flex-col justify-between bg-white drop-shadow-lg ">
-      <div>
+    <aside
+      className={`fixed h-svh w-svw flex-col justify-between bg-white drop-shadow-lg z-20 ${
+        isVisible ? "flex" : "hidden"
+      } xl:flex xl:relative xl:w-fit`}
+    >
+      <div onClick={() => setIsVisible(false)}>
         <Link to="/">
           <h1 className=" text-3xl font-bold p-8 ">EverythingShop</h1>
         </Link>

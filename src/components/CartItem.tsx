@@ -49,7 +49,7 @@ const CartItem = ({ item }: Props) => {
           alt={item.title}
           className="max-h-16 aspect-square p-2 "
         />
-        <p className="px-2">{item.title}</p>
+        <p className="px-2 ">{item.title}</p>
       </div>
       <div className="inline-flex items-center mr-2">
         <span className="flex items-center px-2 text-xl">

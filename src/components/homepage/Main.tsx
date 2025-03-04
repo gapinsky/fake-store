@@ -4,7 +4,7 @@ import NewCollection from "./NewCollection";
 
 const Main = () => {
   return (
-    <div className=" h-full  flex flex-col justify-end">
+    <div className=" h-full   flex flex-col justify-end">
       <Advertise />
       <NewCollection />
       <MainCarousel />
